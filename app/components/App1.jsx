@@ -1,9 +1,5 @@
 var React = require('react');
 
-//Add bootstrap
-var bootstrap = require('bootstrap');
-var bootstrapStyle = require("../../node_modules/bootstrap/dist/css/bootstrap.css");
-
 var App = React.createClass({
   render: function() {
     return (
@@ -78,5 +74,3 @@ var App = React.createClass({
           </div>
 );},
 });
-
-module.exports = App;
