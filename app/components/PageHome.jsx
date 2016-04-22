@@ -5,7 +5,8 @@ var PageHome = React.createClass({
     return (
       <div className="container">
         <div className="row">
-          [MainContent]
+          <h2 className='page-header'>Home</h2>
+          <p>Some content ...</p>
         </div>
       </div>
     );

@@ -15,6 +15,14 @@ var Navbar = React.createClass({
     if(this.props.color === 'dark'){
       navClass = 'navbar navbar-inverse';
     }
+    var homeActive = '';
+    var aboutActive = '';
+
+    if(this.props.page === 'home'){
+      homeActive = 'active';
+    } else if(this.props.page === 'about'){
+      aboutActive = 'active';
+    }
 
     return(
       <div>
@@ -32,38 +40,13 @@ var Navbar = React.createClass({
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li className="active">
-                  <a href="#">Home
-                    <span className="sr-only">(current)</span>
+                <li>
+                  <a className={homeActive} onClick={this.props.homeClick} href="#">Home
                   </a>
                 </li>
                 <li>
-                  <a href="#">About
+                  <a className={aboutActive}    onClick={this.props.aboutClick} href="#">About
                   </a>
-                </li>
-                <li classNameName="dropdown">
-                  <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
-                    <span className="caret"></span>
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a href="#">Action</a>
-                    </li>
-                    <li>
-                      <a href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a href="#">Something else here</a>
-                    </li>
-                    <li role="separator" className="divider"></li>
-                    <li>
-                      <a href="#">Separated link</a>
-                    </li>
-                    <li role="separator" className="divider"></li>
-                    <li>
-                      <a href="#">One more separated link</a>
-                    </li>
-                  </ul>
                 </li>
               </ul>
             </div>
