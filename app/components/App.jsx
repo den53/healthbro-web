@@ -9,26 +9,17 @@ var bootstrapStyle = require("../../node_modules/bootstrap/dist/css/bootstrap.cs
 //Ad custom components
 var Navbar = require('./Navbar.jsx');
 var Jumbotron = require('./Jumbotron.jsx');
-
+var PageHome = require('./PageHome.jsx');
+var Footer = require('./Footer.jsx');
 
 var App = React.createClass({
   render: function() {
     return (
       <div>
-        <Navbar />
+        <Navbar color='dark'/>
         <Jumbotron />
-        <div className="container">
-          <div className="row">
-            [MainContent]
-          </div>
-
-          <hr/>
-
-          <footer>
-            <p>© 2015 MyWebsite</p>
-          </footer>
-        </div>
-        <span classNameName="_hsShareImage hsShareImage">&nbsp;</span>
+        <PageHome />
+        <Footer />
       </div>
     );
   }
