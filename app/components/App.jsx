@@ -1,54 +1,38 @@
-//require custom CSS
+//  require custom CSS
+import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
-var React = require('react');
+//  require npm packages
+import React, { Component } from 'react';
+import 'bootstrap';
 
-//Add bootstrap
-var bootstrap = require('bootstrap');
-var bootstrapStyle = require("../../node_modules/bootstrap/dist/css/bootstrap.css");
-
-//Ad custom components
-var Navbar = require('./Navbar.jsx');
+// Ad custom components
+import Navbar from './Navbar.jsx';
+import Jumbotron from './Jumbotron.jsx';
+import Footer from './Footer.jsx';
+import DetailList from './DetailsList.jsx';
+/*
 var Jumbotron = require('./Jumbotron.jsx');
 var PageHome = require('./PageHome.jsx');
 var PageAbout = require('./PageAbout.jsx');
 var Footer = require('./Footer.jsx');
-
-var App = React.createClass({
-  getInitialState: function(){
-    return {
-      page: 'home'
-    };
-  },
-  handleHomeClick: function(){
-    this.setState({
-      page: 'home'
-    });
-  },
-  handleAboutClick: function(){
-    this.setState({
-      page: 'about'
-    });
-  },
-  render: function() {
-    var jumbotron = '';
-    var page = <PageAbout />;
-    if(this.state.page === 'home'){
-      jumbotron = <Jumbotron />;
-      page = <PageHome />;
-    }
+*/
+export default class App extends Component {
+  render() {
     return (
       <div>
-        <Navbar
-          color='dark'
-          page={this.state.page}
-          homeClick={this.handleHomeClick}
-          aboutClick={this.handleAboutClick}/>
-        {jumbotron}
-        {page}
-        <Footer />
+        Test
+        <Navbar />
+        <Jumbotron
+          heading="The Personal Trainer in Your Pocket"
+          text="HealthBro is a free app and website that makes fitness fun and helps you stay motivated."
+          link="https://www.google.de"
+          img="img/workout.jpg"
+        />
+        <DetailList />
+        <Footer
+          copy_year="2016" website="HealthBro.com"
+        />
       </div>
     );
   }
-});
-
-module.exports = App;
+}

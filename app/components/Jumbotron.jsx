@@ -1,34 +1,26 @@
-//require custom CSS
-require('./Jumbotron.css');
+//  require custom CSS
+import './Jumbotron.css';
 
-var React = require('react');
+import React, { Component } from 'react';
 
-var Jumbotron = React.createClass({
-  PropTypes: {
-    heading: React.PropTypes.string,
-    text: React.PropTypes.string,
-    link: React.PropTypes.string
-  },
-  getDefaultProps: function(){
-    return {
-      heading: 'Welcome!',
-      text: 'Welcome to my great new website build with React components',
-      link: 'http://google.com'
+
+export default class Jumbotron extends Component {
+  render () {
+    let imgUrl = this.props.img;
+    const divStyle = {
+      background: `url(${imgUrl})`,
+      backgroundSize: 'cover',
     };
-  },
-  render: function(){
-    return(
-      <div className="jumbotron">
+    return (
+      <div className="jumbotron" style={divStyle}>
         <div className="container">
           <h1>{this.props.heading}</h1>
           <p>{this.props.text}</p>
           <p>
-            <a className="btn btn-primary btn-lg" href={this.props.link} role="button">Learn more »</a>
+            <a className="btn btn-primary btn-lg" href={this.props.link} role="button">Sign up for free »</a>
           </p>
         </div>
       </div>
     );
   }
-});
-
-module.exports = Jumbotron;
+}

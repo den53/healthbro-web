@@ -1,27 +1,23 @@
-var React = require('react');
+import React, { Component } from 'react';
 
-var Footer = React.createClass({
-  PropTypes: {
-    copy_year: React.PropTypes.number.isRquired,
-    website: React.PropTypes.string.isRequired
-  },
-  getDefaultProps: function(){
-    return {
-      website: 'My Website',
-      copy_year: 2016
-    };
-  },
-  render: function(){
-    return(
+export default class Footer extends Component {
+  render() {
+    return (
       <div className="container">
-        <hr/>
+        <hr />
         <footer>
           <p>© {this.props.copy_year} {this.props.website}</p>
         </footer>
-      <span classNameName="_hsShareImage hsShareImage">&nbsp;</span>
+        <span classNameName="_hsShareImage hsShareImage">&nbsp;</span>
       </div>
     );
   }
-});
-
-module.exports = Footer;
+}
+Footer.defaultProps = {
+  website: 'My Website',
+  copy_year: '2016',
+};
+Footer.propTypes = {
+  copy_year: React.PropTypes.string.isRequired,
+  website: React.PropTypes.string.isRequired,
+};
