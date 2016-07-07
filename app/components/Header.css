@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+.header {
+  background-color: #00C3FF;
+  text-align: center;
+  padding-top: 1em;
+  height: 25%;
+}
+
+.heading {
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;
+}
